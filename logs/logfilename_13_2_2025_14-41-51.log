@@ -1,0 +1,37 @@
+DEBUG [IRLogger.cpp:105] @ 0.0001936s :***************************************************
+DEBUG [IRLogger.cpp:106] @ 0.0002717s :* IRImagerDirect SDK                              *
+DEBUG [IRLogger.cpp:107] @ 0.0002887s :***************************************************
+DEBUG [IRLogger.cpp:113] @ 0.0003406s :* Native Machine:      AMD64
+DEBUG [IRLogger.cpp:114] @ 0.000353s :* Machine:             AMD64
+DEBUG [IRLogger.cpp:116] @ 0.0003795s :* OS:                  Windows 10 0 26100
+DEBUG [IRLogger.cpp:123] @ 0.00039s :***************************************************
+DEBUG [IRDeviceParams.cpp:204] @ 0.003335s :Parameters
+DEBUG [IRDeviceParams.cpp:205] @ 0.0033501s :serial: 0
+DEBUG [IRDeviceParams.cpp:206] @ 0.0033569s :videoformatindex: 0
+DEBUG [IRDeviceParams.cpp:207] @ 0.0033632s :fov: 0
+DEBUG [IRDeviceParams.cpp:208] @ 0.0033694s :optics_text: 0000000000000000
+DEBUG [IRDeviceParams.cpp:209] @ 0.0033758s :formatspath: 000002D57B761140
+DEBUG [IRDeviceParams.cpp:210] @ 0.0033821s :calipath: 0000000000000000
+DEBUG [IRDeviceParams.cpp:211] @ 0.0033881s :temperature min: 0
+DEBUG [IRDeviceParams.cpp:212] @ 0.0033938s :temperature max: 0
+DEBUG [IRDeviceParams.cpp:213] @ 0.0034042s :framerate: 32
+DEBUG [IRDeviceParams.cpp:214] @ 0.0034446s :bispectral: 0
+DEBUG [IRDeviceParams.cpp:215] @ 0.0034548s :flag automatic: 1
+DEBUG [IRDeviceParams.cpp:216] @ 0.0034625s :min interval: 15
+DEBUG [IRDeviceParams.cpp:217] @ 0.0034691s :max interval: 0
+DEBUG [IRDeviceParams.cpp:218] @ 0.003475s :chip heating mode: 0
+DEBUG [IRDeviceParams.cpp:219] @ 0.0034819s :chip heating fixed val: 40
+DEBUG [IRDeviceParams.cpp:220] @ 0.0034894s :focus:  -1
+DEBUG [IRDeviceParams.cpp:221] @ 0.0035071s :enable extended temp range: 0
+DEBUG [IRDeviceParams.cpp:222] @ 0.0035351s :buffer queue size: 5
+DEBUG [IRDeviceParams.cpp:223] @ 0.0035422s :enable high precision: 0
+DEBUG [IRDeviceParams.cpp:224] @ 0.0035483s :radialDistortionCorrectionMode: 0
+DEBUG [IRDeviceParams.cpp:225] @ 0.003554s :deviceAPI: 0
+DEBUG [IRDeviceParams.cpp:226] @ 0.0035596s :useExternalProbeForReferencing: 0
+DEBUG [IRDeviceParams.cpp:227] @ 0.0035652s :enableMultiThreading: 0
+DEBUG [IRDeviceParams.cpp:232] @ 0.0035715s :ethernetDevice.deviceIpAddress: 0.0.0.0
+DEBUG [IRDeviceParams.cpp:233] @ 0.0035771s :ethernetDevice.localUdpPort: 0
+DEBUG [IRDeviceParams.cpp:234] @ 0.0035828s :ethernetDevice.checkUdpSenderIp: 1
+ERROR [IRDeviceDS.cpp:793] @ 0.318865s :Failed to get connected media type hr=-2147418113
+ERROR [IRDeviceDS.cpp:822] @ 0.330415s :create video graph failed hr=-2147418113
+ERROR [DirectBridgeClientUSB.cpp:165] @ 0.334406s :Device with serial 0 could not be found
