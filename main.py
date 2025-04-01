@@ -23,11 +23,11 @@ class EvoIRFrameMetadata(ct.Structure):
 if os.name == 'nt':
         #windows:
         libir = ct.CDLL('.\\libirimager.dll') 
-        pathFormat, pathLog, pathXml = b'.', b'.\\logs\\logfilename', b'.\\generic.xml'
+        pathFormat, pathLog, pathXml = b'.', b'.\\logs\\win11', b'.\\generic.xml'
 else:
         #linux:
         libir = ct.cdll.LoadLibrary(ct.util.find_library("irdirectsdk"))
-        pathFormat, pathLog = b'', b''
+        pathFormat, pathLog = b'', b'./logs/rasp'
         pathXml = b'.\generic.xml'
 
 # init vars
