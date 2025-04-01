@@ -28,7 +28,7 @@ else:
         #linux:
         libir = ct.cdll.LoadLibrary(ct.util.find_library("irdirectsdk"))
         pathFormat, pathLog = b'', b'./logs/rasp'
-        pathXml = b'.\generic.xml'
+        pathXml = b'./generic.xml'
 
 # init vars
 palette_width, palette_height = ct.c_int(), ct.c_int()
