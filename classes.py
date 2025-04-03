@@ -2,7 +2,6 @@ import numpy as np
 import ctypes as ct
 import cv2
 import os
-import datetime
 import time
 
 class EvoIRCamera:
