@@ -1,2 +1,2 @@
-.\generic.xml
-0
+.\generic_Win.xml
+1

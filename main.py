@@ -23,11 +23,14 @@ class EvoIRFrameMetadata(ct.Structure):
 if os.name == 'nt':
         #windows:
         libir = ct.CDLL('.\\libirimager.dll') 
-        pathFormat, pathLog, pathXml = b'.', b'.\\logs\\win11', b'.\\generic_Win.xml'
+        pathFormat = b'.'
+        pathLog = b'.\\logs\\win11'
+        pathXml = b'.\\generic_Win.xml'
 else:
         #linux:
         libir = ct.cdll.LoadLibrary(ct.util.find_library("irdirectsdk"))
-        pathFormat, pathLog = b'', b'./logs/rasp'
+        pathFormat = b''
+        pathLog = b'./logs/rasp'
         pathXml = b'./generic_Lin.xml'
 
 # init vars
@@ -113,7 +116,7 @@ def criar_barra_escala(temp_min, temp_max, colormap, height):
 metadata = EvoIRFrameMetadata()
 
 # init lib
-ret = libir.evo_irimager_usb_init(pathXml, pathFormat, None) # Para habilitar log, substituir None por pathLog
+ret = libir.evo_irimager_usb_init(pathXml, pathFormat, pathLog) # Para habilitar log, substituir None por pathLog
 ########################################################################
 # get the serial number
 try:
