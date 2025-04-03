@@ -40,6 +40,9 @@ serial = ct.c_ulong()
 focus_position = ct.c_float()
 pallete = ct.c_int()
 
+# tecla para sair do programa
+key = 'p'
+
 # Definir opções de paleta da câmera
 PALETTE_OPTIONS = {
         1: "AlarmBlue",
@@ -116,7 +119,8 @@ def criar_barra_escala(temp_min, temp_max, colormap, height):
 metadata = EvoIRFrameMetadata()
 
 # init lib
-ret = libir.evo_irimager_usb_init(pathXml, pathFormat, pathLog) # Para habilitar log, substituir None por pathLog
+ret = libir.evo_irimager_usb_init(pathXml, pathFormat, pathLog) 
+
 ########################################################################
 # get the serial number
 try:
@@ -143,7 +147,7 @@ except Exception as e:
 # for the focus motor
 focus = 80 # 0% - 100%
 try:
-        ret = libir.evo_irimager_set_focusmotor_pos(ct.c_float(focus))
+        ret = libir.evo_irimager_set_focusmotor_pos(ct.c_float(focus)) #deve ser um float do python
 
         if ret == 0:
                 print(f"Posição do motor de foco ajustado para: {focus}%")
@@ -193,6 +197,7 @@ except Exception as e:
 
 ########################################################################
 
+
 # get thermal image size
 libir.evo_irimager_get_thermal_image_size(ct.byref(thermal_width), ct.byref(thermal_height))
 print('thermal width: ' + str(thermal_width.value))
@@ -221,7 +226,7 @@ show_time_stamp = False
 
 
 # capture and display image till q is pressed
-while chr(cv2.waitKey(1) & 255) != 'q':
+while chr(cv2.waitKey(1) & 255) != key:
 
         if show_time_stamp:
                print(time_stamp)
@@ -244,11 +249,13 @@ while chr(cv2.waitKey(1) & 255) != 'q':
         temperatures = (np_thermal.reshape(thermal_height.value, thermal_width.value) - 1000.0) / 10.0 
 
         # Calculate maximum and minimum temperature
-        temp_max = temperatures.max()
+        temp_max = 40
         print('max temp',temp_max)
-        temp_min = temperatures.min()
+        temp_min = 20
         print('min temp',temp_min)
         print('mean temp: ' + str(temperatures.mean()))
+
+        temperatures = np.clip(temperatures, temp_min, temp_max)
 
         if temp_max != temp_min:
                 # Normalizar os valores para 8 bits (0-255)
